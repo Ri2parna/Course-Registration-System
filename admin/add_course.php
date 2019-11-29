@@ -19,6 +19,7 @@ $update_query = mysqli_query($database,"INSERT INTO Subjects (Department,Course_
 if($update_query)
 {
     $_SESSION['msg']="Added Subjects !!";
+    header('location: admin_panel.php');
 }
 else
 {
@@ -94,7 +95,7 @@ else
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Edit Course</h2>
+                    <h2 class="title">Add Course</h2>
                     <div class="title"><?php
 
                         if(isset($_SESSION['msg']))

@@ -181,28 +181,58 @@ if(isset($_SESSION['Enrollment_No']))
                             </div>
                         </div>
 
-                        <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                        <div class="form-row">
+                            <div class="name">Subject : </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" value="<?php print_r($query['Subject_1']) ?>" name="Journal_Number" required="" readonly>
+                                </div>
+                            </div>
+                        </div>
 
-                                            $count = 0;
-                                            while($row=mysqli_fetch_array($subject_query))
-                                            {
-                                             ?>
 
-                                             <div class="form-row">
-                                             <div class="name">Subject <?php print_r($count + 1); ?></div>
-                                            <div class="value">
-                                             <div class="input-group">
-                                            <input class="input--style-5" type="text" name="Phone" value="<?php echo htmlentities($row[$count]) ?>" readonly>
-                                            </div>
-                                            </div>
-                                            </div>
+                        <div class="form-row">
+                            <div class="name">Subject : </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" value="<?php print_r($query['Subject_2']) ?>" name="Journal_Number" required="" readonly>
+                                </div>
+                            </div>
+                        </div>
 
-                                             <?php 
-                                                $count++;
-                                            } 
-                                            ?>
+
+                        <div class="form-row">
+                            <div class="name">Subject : </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" value="<?php print_r($query['Subject_3']) ?>" name="Journal_Number" required="" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="name">Subject : </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" value="<?php print_r($query['Subject_4']) ?>" name="Journal_Number" required="" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Subject : </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" value="<?php print_r($query['Subject_5']) ?>" name="Journal_Number" required="" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
 
                     </form>
                 </div>

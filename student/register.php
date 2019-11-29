@@ -24,11 +24,19 @@ if(isset($_POST['submit']))
   $Phone = $_POST['Phone'];
   $Fee_Amount = $_POST['Fee_Amount'];
   $Journal_Number = $_POST['Journal_Number'];
+  $Subject_1 = $_POST['Subject_1'];
+  $Subject_2 = $_POST['Subject_2'];
+  $Subject_3 = $_POST['Subject_3'];
+  $Subject_4 = $_POST['Subject_4'];
+  $Subject_5 = $_POST['Subject_5'];
 
 // $update_query = mysqli_query($database,"UPDATE `Student` SET `Last_Name` = 'dadd' WHERE `Student`.`Enrollment_No` = 'CSB17074' ");
 
 
-  $update_query = mysqli_query($database,"UPDATE `Student` SET `First_Name` = '$First_Name', `Last_Name` = '$Last_Name', `Department` = '$Department', `Semester` = '$Semester', `SGPA` = '$SGPA', `CGPA` = '$CGPA', `Category` = '$Category',`Fee_Amount` = '$Fee_Amount',`Journal_Number` = '$Journal_Number' WHERE `Student`.`Enrollment_No` = '$Enrollment_No' ");
+  $update_query = mysqli_query($database,"UPDATE `Student` SET `First_Name` = '$First_Name', `Last_Name` = '$Last_Name', `Department` = '$Department', `Semester` = '$Semester', `Journal_Number` = '$Journal_Number', `SGPA` = '$SGPA', `CGPA` = '$CGPA', `Category` = '$Category', `Fee_Amount` = '$Fee_Amount', `Subject_1` = '$Subject_1', `Subject_2` = '$Subject_2', `Subject_3` = '$Subject_3', `Subject_4` = '$Subject_4', `Subject_5` = '$Subject_5' WHERE `Student`.`Enrollment_No` = '$Enrollment_No' ");
+
+
+  // $update_query = mysqli_query($database,"UPDATE `Student` SET `First_Name` = '$First_Name', `Last_Name` = '$Last_Name', `Department` = '$Department', `Semester` = '$Semester', `SGPA` = '$SGPA', `CGPA` = '$CGPA', `Category` = '$Category',`Fee_Amount` = '$Fee_Amount',`Journal_Number` = '$Journal_Number' WHERE `Student`.`Enrollment_No` = '$Enrollment_No' ");
 
 if($update_query)
 {
@@ -61,7 +69,7 @@ header('location: dashboard.php');
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Student Panel // Registration</title>
+    <title>Admin Panel // Edit Registration</title>
 
     <!-- Icons font CSS-->
     <link href="../others/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -72,6 +80,8 @@ header('location: dashboard.php');
     <!-- Vendor CSS-->
     <link href="../others/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="../others/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
 
     <!-- Main CSS-->
     <link href="../others/css/main.css" rel="stylesheet" media="all">
@@ -154,13 +164,14 @@ header('location: dashboard.php');
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Department From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT department from Subjects");
 
-                                            $count = -1;
+
+                                            $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -235,14 +246,14 @@ header('location: dashboard.php');
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <!-- <div class="form-row">
                             <div class="name">Phone</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="Phone" required="">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-row">
                             <div class="name">Category: </div>
@@ -267,17 +278,18 @@ header('location: dashboard.php');
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject" required="">
+                                        <select name="Subject_1" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code from Subjects");
+
 
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -296,17 +308,18 @@ header('location: dashboard.php');
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
+                                        <select name="Subject_2" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code from Subjects");
+
 
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -324,17 +337,18 @@ header('location: dashboard.php');
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
+                                        <select name="Subject_3" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code from Subjects");
+
 
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -352,17 +366,18 @@ header('location: dashboard.php');
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
+                                        <select name="Subject_4" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code from Subjects");
+
 
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -374,23 +389,26 @@ header('location: dashboard.php');
                                 </div>
                             </div>
                         </div>
+
+
 
                         <div class="form-row">
                             <div class="name">Subject 5</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
+                                        <select name="Subject_5" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Course_Code from Subjects");
+
 
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
@@ -402,6 +420,7 @@ header('location: dashboard.php');
                                 </div>
                             </div>
                         </div>
+
                         <!-- <div class="form-row p-t-20">
                             <label class="label label--block">Do you confirm your inputs ?</label>
                             <div class="p-t-15">
