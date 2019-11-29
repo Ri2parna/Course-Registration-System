@@ -1,0 +1,34 @@
+Checked: 
+1. homepage --> index --> dashboard(student/dashboard)
+2. dashboard --> register (student/register/)
+			 --> 
+3.Viewdata.php --> student/view.php
+			--> Student can see the details he submitted
+
+4. --. Student View
+	--. Student Logout
+
+
+
+Admin folder: 
+index.php = login
+TODO :
+
+	--Fix issues with student register
+	1. 
+	2. Logout.php
+	3. build admin/view_students.php
+			---> view student data individually, edit them and delete them.
+			
+
+
+
+
+admin/index.php --> is supposed to meant for login purposes for admin
+admin_panel.php --> admin dashboard 
+	edit.php --> (admin/edit.php)
+		contains the formatted data in form of tables. there is option to delete, and edit. the edit is to be implemented.
+	add_course.php --> admin/addcourse.php
+		to add new courses to the department
+	registered_students.php
+		--> Contains the details of the students registered 
