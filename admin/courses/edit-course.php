@@ -140,37 +140,38 @@ else
                         </div>
 
 
-                        <div class="form-row">
+                                                <div class="form-row">
                             <div class="name">Department</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="Department" value="<?php print_r($values['Department']) ?>" required="">
+                                        <select name="Department" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
-                                        <?php 
+                                            <?php 
 
-                                            $subject_query = mysqli_query($database,"SELECT DISTINCT Department From Subjects");
+                                            $subject_query = mysqli_query($database,"SELECT DISTINCT department from Subjects");
+
+
                                             $count = 0;
                                             while($row=mysqli_fetch_array($subject_query))
                                             {
                                              ?>
-                                             <option><?php print_r($row[$count]) ?></option>
+                                             <option><?php print_r($row[0]) ?></option>
 
                                              <?php 
                                                 $count++;
                                             } 
                                             ?>
-                                            
                                         </select>
-
-
-
-
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
+                        
                         <div class="form-row">
                             <div class="name">Course Credits</div>
                         <div class="col-2">

@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
   $Subject_5 = $_POST['Subject_5'];
 
 
-$update_query = mysqli_query($database,"UPDATE `Student` SET  `First_Name` = '$First_Name', `Last_Name` = '$Last_Name', `Department` = 'Department', `Journal_Number` = 'Journal_Number', `Category` = '$Category', `Subject_1` = '$Subject_1', `Subject_2` = '$Subject_2', `Subject_3` = '$Subject_3', `Subject_4` = '$Subject_4', `Subject_5` = '$Subject_5' WHERE `Student`.`Enrollment_No` = '$Enrollment_No';");
+$update_query = mysqli_query($database,"UPDATE `Student` SET  `First_Name` = '$First_Name', `Last_Name` = '$Last_Name', `Department` = '$Department', `Journal_Number` = '$Journal_Number', `Category` = '$Category', `Subject_1` = '$Subject_1', `Subject_2` = '$Subject_2', `Subject_3` = '$Subject_3', `Subject_4` = '$Subject_4', `Subject_5` = '$Subject_5' WHERE `Student`.`Enrollment_No` = '$Enrollment_No';");
 
 if($update_query)
 {
