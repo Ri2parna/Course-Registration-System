@@ -2,26 +2,20 @@
 define('DB_SERVER','localhost');
 define('DB_USER','root');
 define('DB_PASS' ,'');
-define('DB_NAME','TU_Student_Data');
-$database = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+define('','TU_Student_Data');
+$database = pg_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 // Check connection
-if (mysqli_connect_errno())
+if (pg_connect_errno())
 {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
 if(isset($_GET['del']))
-      {
-              mysqli_query($database,"DELETE FROM Student WHERE Enrollment_No = '".$_GET['id']."'");
-                  $_SESSION['delmsg']="Course deleted !!";
-      }
-
+{
+  mysqli_query($database,"DELETE FROM Student WHERE Enrollment_No = '".$_GET['id']."'");
+  $_SESSION['delmsg']="Course deleted !!";
+}
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en" >
