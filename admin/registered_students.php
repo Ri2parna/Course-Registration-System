@@ -3,9 +3,9 @@ define('DB_SERVER','localhost');
 define('DB_USER','root');
 define('DB_PASS' ,'');
 define('','TU_Student_Data');
-$database = pg_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+$database = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 // Check connection
-if (pg_connect_errno())
+if (mysqli_connect_errno())
 {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
